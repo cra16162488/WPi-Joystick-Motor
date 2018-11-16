@@ -47,8 +47,8 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-  m_motor0.Set(ControlMode::Velocity, m_joystick->GetRawAxis(0));
-  m_motor1.Set(ControlMode::Velocity, m_joystick->GetRawAxis(1));
+  m_motor0.Set(m_joystick->GetRawAxis(0));
+  m_motor1.Set(m_joystick->GetRawAxis(1));
 }
 
 void Robot::TestPeriodic() {
@@ -57,3 +57,4 @@ void Robot::TestPeriodic() {
 #ifndef RUNNING_FRC_TESTS
 START_ROBOT_CLASS(Robot)
 #endif
+
