@@ -49,7 +49,7 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-  m_drive->ArcadeDrive(m_joystick->GetRawAxis(0),m_joystick->GetRawAxis(1));
+  m_drive->ArcadeDrive(m_joystick->GetRawAxis(1),m_joystick->GetRawAxis(0));
   
   m_slave_motor_left0.Follow(m_master_motor_left);
   m_slave_motor_left1.Follow(m_master_motor_left);

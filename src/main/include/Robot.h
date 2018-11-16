@@ -40,10 +40,10 @@ class Robot : public frc::IterativeRobot {
    WPI_TalonSRX m_master_motor_left{4};
    WPI_TalonSRX m_master_motor_right{1};
 
-   WPI_TalonSRX m_slave_motor_left0{2};
-   WPI_TalonSRX m_slave_motor_left1{3};
-   WPI_TalonSRX m_slave_motor_right0{5};
-   WPI_TalonSRX m_slave_motor_right1{6};
+   WPI_TalonSRX m_slave_motor_left0{5};
+   WPI_TalonSRX m_slave_motor_left1{6};
+   WPI_TalonSRX m_slave_motor_right0{2};
+   WPI_TalonSRX m_slave_motor_right1{3};
    
    Joystick *m_joystick;
 };
