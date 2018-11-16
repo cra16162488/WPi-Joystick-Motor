@@ -5,6 +5,14 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+
+/*
+4
+5
+talonsrx
+*/
+
+
 #pragma once
 
 #include <string>
@@ -12,7 +20,8 @@
 #include <IterativeRobot.h>
 #include <SmartDashboard/SendableChooser.h>
 #include <Joystick.h>
-#include <VictorSP.h>
+#include <ctre/Phoenix.h>
+// #include <VictorSP.h>
 
 class Robot : public frc::IterativeRobot {
  public:
@@ -25,8 +34,8 @@ class Robot : public frc::IterativeRobot {
   void TestPeriodic() override;
 
   private:
-   frc::VictorSP m_motor0{0};
-   frc::VictorSP m_motor1{1};
+   TalonSRX m_motor0{4};
+   TalonSRX m_motor1{5};
    
    Joystick *m_joystick;
 };
