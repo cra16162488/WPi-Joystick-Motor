@@ -19,6 +19,7 @@ talonsrx
 
 #include <IterativeRobot.h>
 #include <SmartDashboard/SendableChooser.h>
+#include <RobotDrive.h>
 #include <Joystick.h>
 #include <ctre/Phoenix.h>
 // #include <VictorSP.h>
@@ -34,8 +35,15 @@ class Robot : public frc::IterativeRobot {
   void TestPeriodic() override;
 
   private:
-   WPI_TalonSRX m_motor0{4};
-   WPI_TalonSRX m_motor1{5};
+   RobotDrive *m_drive;
+
+   WPI_TalonSRX m_master_motor_left{4};
+   WPI_TalonSRX m_master_motor_right{1};
+
+   WPI_TalonSRX m_slave_motor_left0{2};
+   WPI_TalonSRX m_slave_motor_left1{3};
+   WPI_TalonSRX m_slave_motor_right0{5};
+   WPI_TalonSRX m_slave_motor_right1{6};
    
    Joystick *m_joystick;
 };

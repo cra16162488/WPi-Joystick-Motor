@@ -11,8 +11,15 @@
 
 #include <SmartDashboard/SmartDashboard.h>
 
-void Robot::RobotInit() {
+void Robot::RobotInit()
+{
+  m_drive = new RobotDrive(m_master_motor_left, m_master_motor_right);
   m_joystick = new Joystick(1);
+
+  m_slave_motor_left0.Follow(m_master_motor_left);
+  m_slave_motor_left1.Follow(m_master_motor_left);
+  m_slave_motor_right0.Follow(m_master_motor_right);
+  m_slave_motor_right1.Follow(m_master_motor_right);
 }
 
 /**
@@ -47,8 +54,7 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-  m_motor0.Set(m_joystick->GetRawAxis(0));
-  m_motor1.Set(m_joystick->GetRawAxis(1));
+  m_drive->ArcadeDrive(m_joystick);
 }
 
 void Robot::TestPeriodic() {
