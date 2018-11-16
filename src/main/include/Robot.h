@@ -34,8 +34,8 @@ class Robot : public frc::IterativeRobot {
   void TestPeriodic() override;
 
   private:
-   TalonSRX m_motor0{4};
-   TalonSRX m_motor1{5};
+   WPI_TalonSRX m_motor0{4};
+   WPI_TalonSRX m_motor1{5};
    
    Joystick *m_joystick;
 };
